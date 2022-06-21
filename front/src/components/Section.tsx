@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 // styled-components
 import {
   SectionWrapper,
@@ -8,7 +8,7 @@ import {
   AwardItems,
   AwardItemGoogle,
   AwardItemApple,
-} from '../styles/SectionSt';
+} from '../styles/SectionSt'
 
 const Section = (): any => {
   return (
@@ -49,7 +49,7 @@ const Section = (): any => {
         </AwardItems>
       </ContentsWrapper>
     </SectionWrapper>
-  );
-};
+  )
+}
 
-export default Section;
+export default Section

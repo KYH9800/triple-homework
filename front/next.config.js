@@ -1,6 +1,6 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
-});
+})
 
 module.exports = withBundleAnalyzer({
   target: 'serverless',
@@ -30,9 +30,9 @@ module.exports = withBundleAnalyzer({
           },
         },
       ],
-    });
+    })
     // 절대경로
-    conf.resolve.modules.push(__dirname);
-    return conf;
+    conf.resolve.modules.push(__dirname)
+    return conf
   },
-});
+})

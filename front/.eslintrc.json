@@ -1,6 +1,17 @@
 {
-  "name": "eslint-config-name",
-  "rules": {
-    "@next/next/no-document-import-in-page": "off"
-  }
+  "extends": ["./index"],
+  "parserOptions": {
+    "requireConfigFile": false
+  },
+  "overrides": [
+    {
+      "files": ["*.test.js"],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 }
+// "rules": {
+//   "@next/next/no-document-import-in-page": "off"
+// }
