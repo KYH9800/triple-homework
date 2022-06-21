@@ -1,4 +1,3 @@
-import React from 'react'
 // styled-components
 import {
   SectionWrapper,
@@ -10,7 +9,7 @@ import {
   AwardItemApple,
 } from '../styles/SectionSt'
 
-const Section = (): any => {
+const Section = () => {
   return (
     <SectionWrapper>
       <ContentsWrapper>

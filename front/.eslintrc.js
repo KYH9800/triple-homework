@@ -1,3 +1,4 @@
-import createConfig from '@titicaca/eslint-config-triple/create-config'
+/* eslint-disable prettier/prettier */
+const createConfig = require('@titicaca/eslint-config-triple/create-config')
 
-export default createConfig({ type: 'frontend', project: './tsconfig.json' })
+module.exports = createConfig({ type: 'frontend', project: './tsconfig.json' })

@@ -1,19 +1,19 @@
 import styled from 'styled-components'
 
-export const SectionWrapper: any = styled.section`
+export const SectionWrapper = styled.section`
   min-width: 1200px;
   height: auto;
   background-color: rgb(255 255 255);
 `
 
-export const ContentsWrapper: any = styled.div`
+export const ContentsWrapper = styled.div`
   position: relative;
   margin: 0px auto;
   width: 1040px;
   height: auto;
 `
 
-export const ContentsLogo: any = styled.div`
+export const ContentsLogo = styled.div`
   position: absolute;
   top: 150px;
   background-image: url(/images/triple2x.png);
@@ -27,7 +27,7 @@ export const ContentsLogo: any = styled.div`
   color: rgba(58, 58, 58, 0.7);
 `
 
-export const ContentsReview: any = styled.div`
+export const ContentsReview = styled.div`
   /* position: absolute;
   top: 143px;
   right: 148px; */
@@ -43,7 +43,7 @@ export const ContentsReview: any = styled.div`
   }
 `
 
-export const AwardItems: any = styled.div`
+export const AwardItems = styled.div`
   /* position: absolute;
   top: 346px;
   right: -23px; */
@@ -63,11 +63,11 @@ export const AwardItems: any = styled.div`
   }
 `
 
-export const AwardItemGoogle: any = styled.div`
+export const AwardItemGoogle = styled.div`
   margin-right: 39px;
   background-image: url(/images/play-store2x.png);
 `
 
-export const AwardItemApple: any = styled.div`
+export const AwardItemApple = styled.div`
   background-image: url(/images/badge-apple4x.png);
 `

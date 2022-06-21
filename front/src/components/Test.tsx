@@ -1,11 +1,5 @@
-import React from 'react'
-
-const Test = (): any => {
-  return (
-    <>
-      <div>test</div>
-    </>
-  )
+const Test = () => {
+  return <div>test</div>
 }
 
 export default Test

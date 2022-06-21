@@ -1,6 +1,9 @@
 import Head from 'next/head'
-import GlobalStyle from '../styles/global-styles'
 import type { AppProps } from 'next/app'
+import { ThemeProvider } from 'styled-components'
+
+import GlobalStyle from '../styles/global-styles'
+import { theme } from '../styles/theme'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -11,9 +14,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <title>트리플: 여행의 모든 것, 트리플로 한 번에</title>
       </Head>
       <GlobalStyle />
-      <>
+      <ThemeProvider theme={theme}>
         <Component {...pageProps} />
-      </>
+      </ThemeProvider>
     </>
   )
 }

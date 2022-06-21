@@ -1,41 +1,43 @@
-import React from 'react'
 import Document, {
   Html,
   Head,
   Main,
   NextScript,
   DocumentInitialProps,
+  DocumentContext,
 } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx): Promise<DocumentInitialProps> {
+  static async getInitialProps(
+    ctx: DocumentContext,
+  ): Promise<DocumentInitialProps> {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
+    const initialProps = await Document.getInitialProps(ctx)
 
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App: any) => (props: any) =>
+          enhanceApp: (App) => (props) =>
             sheet.collectStyles(<App {...props} />),
         })
 
-      const initialProps = await Document.getInitialProps(ctx)
       return {
         ...initialProps,
-        styles: (
-          <>
+        styles: [
+          <div key="any">
             {initialProps.styles}
             {sheet.getStyleElement()}
-          </>
-        ),
+          </div>,
+        ],
       }
     } finally {
       sheet.seal()
     }
   }
 
-  render() {
+  public render() {
     return (
       <Html>
         <Head />
@@ -50,6 +52,7 @@ class MyDocument extends Document {
 
 export default MyDocument
 
-/*
-return initialProps;
-*/
+// eslint error getInitialProps 문제 참고(하단)
+// https://stackoverflow.com/questions/67087999/how-to-properly-type-the-document-tsx-file-from-next-js
+// https://blog.sycamore.design/material-ui-next-js-typescript#heading-create-custom-documenttsx
+// https://nextjs.org/docs/advanced-features/custom-document#typescript
