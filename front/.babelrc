@@ -4,9 +4,9 @@
     [
       "babel-plugin-styled-components",
       {
-        "ssr": false,
-        "displayName": true, // 클래스명에 해당 스타일 정보 추가
-        "preprocess": true
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
       }
     ]
   ]
