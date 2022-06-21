@@ -4,11 +4,10 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   html,
   body {
-    overflow: hidden;
     padding: 0;
     margin: 0;
+    background-color: #fff;
   }
-
   * {
     box-sizing: border-box;
   }

@@ -5,10 +5,10 @@ import Test from '../src/components/Test';
 
 const HomePage = (): any => {
   return (
-    <div>
-      <Section />
+    <>
       <Test />
-    </div>
+      <Section />
+    </>
   );
 };
 
