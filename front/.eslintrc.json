@@ -1,0 +1,6 @@
+{
+  "name": "eslint-config-name",
+  "rules": {
+    "@next/next/no-document-import-in-page": "off"
+  }
+}
