@@ -7,7 +7,7 @@ Frontend Homework #3
 ![image](https://user-images.githubusercontent.com/61128538/174728224-876f15b2-9dc6-405f-9fb6-9192d92f56c1.png)
 
 
-요구사항
+### 요구사항
 
 ● 문구, 이미지의 레이아웃과 스타일은 트리플 홈페이지와 동일해야 합니다. 단, 반응형 레이아웃은 고려하지 않습니다. 최소 화면 폭을 1200px로 고정합니다.
 
@@ -26,9 +26,9 @@ Frontend Homework #3
 
 ● https://github.com/titicacadev/eslint-config-triple
 
-애니메이션 명세
+### 애니메이션 명세
 
-영역별 등장 애니메이션
+#### 영역별 등장 애니메이션
 
 ● 좌측 이미지, 지표 문구, 수상 내역 순으로 표시해야 합니다.
 
@@ -46,7 +46,7 @@ Frontend Homework #3
 
 ● React와 DOM API만을 이용해 구현해야 합니다.
 
-평가 항목
+### 평가 항목
 
 ● 컴포넌트를 어떻게 나누는지 평가합니다.
 
