@@ -40,7 +40,11 @@ class MyDocument extends Document {
   public render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="shortcut icon" href="/favicon.ico" />
+          <title>트리플: 여행의 모든 것, 트리플로 한 번에</title>
+        </Head>
         <body>
           <Main />
           <NextScript />

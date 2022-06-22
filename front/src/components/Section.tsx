@@ -8,31 +8,65 @@ import {
   AwardItemGoogle,
   AwardItemApple,
 } from '../styles/SectionSt'
+// mockdata
+import { database } from '../mockdata/data'
 
 const Section = () => {
+  console.log(database.triper.length)
+  console.log(database.review.length)
+  console.log(database.calendar.length)
+
+  const triperNum = (num: number) => {
+    if (num > 999) {
+      return (
+        <>
+          <strong>
+            <span>{num}</span> 만 명
+          </strong>
+          의 여행자
+        </>
+      )
+    }
+  }
+
+  const reviewerNum = (num: number) => {
+    if (num > 9999) {
+      return (
+        <>
+          <strong>
+            <span>{num}</span>만 개
+          </strong>
+          의 여행 리뷰
+        </>
+      )
+    }
+  }
+
+  const calendarNum = (num: number) => {
+    if (num > 9999) {
+      return (
+        <>
+          <strong>
+            <span>{num}</span>만 개
+          </strong>
+          의 여행 일정
+        </>
+      )
+    }
+  }
+
+  function numberToKorea(number: number) {
+    // todo: 숫자 단위를 한글로 자르기
+  }
+
   return (
     <SectionWrapper>
       <ContentsWrapper>
         <ContentsLogo>2021년 12월 기준</ContentsLogo>
         <ContentsReview>
-          <div>
-            <strong>
-              <span>700</span>만 명
-            </strong>
-            의 여행자
-          </div>
-          <div>
-            <strong>
-              <span>100</span>만 개
-            </strong>
-            의 여행 리뷰
-          </div>
-          <div>
-            <strong>
-              <span>470</span>만 개
-            </strong>
-            의 여행 일정
-          </div>
+          <div>{triperNum(database.triper.length)}</div>
+          <div>{reviewerNum(database.review.length)}</div>
+          <div>{calendarNum(database.calendar.length)}</div>
         </ContentsReview>
         <AwardItems>
           <AwardItemGoogle>
