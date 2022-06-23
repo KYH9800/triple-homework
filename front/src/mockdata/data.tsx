@@ -5,17 +5,17 @@ interface ArrayType {
   calendar: number[]
 }
 export const database: ArrayType = {
-  triper: Array(7000000)
+  triper: Array(700)
     .fill('triper')
     .map((ele, idx) => {
       return ele
     }),
-  review: Array(1000000)
+  review: Array(100)
     .fill('review')
     .map((ele, idx) => {
       return ele
     }),
-  calendar: Array(4700000)
+  calendar: Array(470)
     .fill('calendar')
     .map((ele, idx) => {
       return ele

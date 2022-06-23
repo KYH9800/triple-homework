@@ -1,5 +1,30 @@
-import styled from 'styled-components'
+// styled-components
+import styled, { keyframes } from 'styled-components'
 
+// keyframes
+export const fadeInUp: {} = keyframes`
+  0% {
+      opacity:0;
+      transform: translate3d(0, 8%, 0);
+  }
+  to {
+      opacity: 1;
+      transform: translateZ(0);
+  }
+`
+
+export const fadeInUp01: {} = keyframes`
+  0% {
+      opacity:0;
+      transform: translate3d(0, 30%, 0);
+  }
+  to {
+      opacity: 1;
+      transform: translateZ(0);
+  }
+`
+
+// styled variable
 export const SectionWrapper = styled.section`
   min-width: 1200px;
   height: auto;
@@ -15,17 +40,9 @@ export const ContentsWrapper = styled.div`
 
 export const ContentsLogo = styled.div`
   // animation keyframes
-  @keyframes ContentsLogofadeInUp {
-    0% {
-      opacity: 0;
-      transform: translate3d(0, 10%, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translateZ(0);
-    }
-  }
-  animation: ContentsLogofadeInUp 1s;
+  animation: ${fadeInUp};
+  animation-duration: 700ms;
+  animation-delay: 0ms;
   position: absolute;
   top: 150px;
   background-image: url(/images/triple2x.png);
@@ -41,16 +58,10 @@ export const ContentsLogo = styled.div`
 
 export const ContentsReview = styled.div`
   // animation keyframes
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translate3d(0, 5%, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translateZ(0);
-    }
-  }
+  position: relative;
+  animation: ${fadeInUp};
+  animation-duration: 700ms;
+  animation-delay: 100ms;
   margin-left: 623px;
   padding-top: 147px;
   color: rgb(58, 58, 58);
@@ -58,8 +69,6 @@ export const ContentsReview = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   letter-spacing: 0px;
-  position: relative;
-  animation: fadeInUp 1s;
   div {
     margin-bottom: 15px;
   }
@@ -67,20 +76,12 @@ export const ContentsReview = styled.div`
 
 export const AwardItems = styled.div`
   // animation keyframes
-  @keyframes AwardItemsfadeInUp {
-    0% {
-      opacity: 0;
-      transform: translate3d(0, 30%, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translateZ(0);
-    }
-  }
+  position: relative;
+  animation: ${fadeInUp01};
+  animation-duration: 700ms;
+  animation-delay: 200ms;
   margin: 33px 0px 140px 623px;
   display: inline-flex;
-  position: relative;
-  animation: AwardItemsfadeInUp 1s;
   div {
     display: inline-block;
     background-size: 54px 54px;

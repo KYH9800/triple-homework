@@ -1,19 +1,38 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true', // true여야 실행된다
+  enabled: process.env.ANALYZE === 'true',
 })
 
 module.exports = withBundleAnalyzer({
-  compress: true, // 파일을 압축한다(gzip: 파일 압축에 쓰이는 응용 소프트웨어)
-  webpack(config, { webpack }) {
-    const prod = process.env.NODE_ENV === 'production'
-    return {
-      ...config,
-      mode: prod ? 'production' : 'development', // 배포면 'production' 아니라면 'development'
-      devtool: prod ? 'hidden-source-map' : 'eval', // 배포면 'hidden-source-map'(배포 환경에서 소스코드를 숨겨준다) 아니라면 'eval'
-      plugins: [
-        ...config.plugins,
-        // new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /^\.\/ko$/),
-      ], // googling: 'webpack moment locale tree shaking'
-    }
+  target: 'serverless',
+  env: {
+    BASE_URL: process.env.BASE_URL,
+  },
+
+  webpack(conf) {
+    conf.module.rules.push({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            svgoConfig: {
+              plugins: [
+                {
+                  // Enable figma's wrong mask-type attribute work
+                  removeRasterImages: false,
+                  removeStyleElement: false,
+                  removeUnknownsAndDefaults: false,
+                  // Enable svgr's svg to fill the size
+                  removeViewBox: false,
+                },
+              ],
+            },
+          },
+        },
+      ],
+    })
+    // 절대경로
+    conf.resolve.modules.push(__dirname)
+    return conf
   },
 })
