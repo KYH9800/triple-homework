@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
+
 // styled-components
 import {
   SectionWrapper,
@@ -8,59 +9,92 @@ import {
   AwardItems,
   AwardItemGoogle,
   AwardItemApple,
-  fadeInUp,
 } from '../styles/SectionSt'
-// mockdata
-import { database } from '../mockdata/data'
+
+// 숫자 올라가는 애니매이션
+// react와 DOM API로만 구현
+// 0부터 시작, 2초 동안 증가, 동시 끝
+// 증가 속도 느려지는 효과까지 (setInterval, clearInterval)
+// 참고: https://www.youtube.com/watch?v=pwV40r8IGWQ
 
 const Section = () => {
-  const contentsLogoAnimation = useRef(null)
-  const contentsReviewAnimation = useRef(null)
-  const awardItemsAnimation = useRef(null)
+  const [triper, setTriper] = useState<number>(700)
+  const [reviewer, setReviewer] = useState<number>(100)
+  const [calendar, setcCalendar] = useState<number>(470)
 
   useEffect(() => {
-    console.log(contentsLogoAnimation)
-    setTimeout(() => {
-      console.log(contentsReviewAnimation)
-    }, 100)
-    setTimeout(() => {
-      console.log(awardItemsAnimation)
-    }, 200)
+    triperTimer(triper)
+    reviewerTimer(reviewer)
+    calendarTimer(calendar)
   }, [])
 
-  // 숫자 올라가는 애니매이션
-  // react와 DOM API로만 구현
-  // 0부터 시작, 2초 동안 증가, 동시 끝
-  // 증가 속도 느려지는 효과까지 (setInterval, clearInterval)
-  // 참고: https://www.youtube.com/watch?v=pwV40r8IGWQ
+  function triperTimer(number: number) {
+    let num: number = 0
+    let intervalTime: number = 10
+    let timer = setInterval(() => {
+      num += 6
+      if (num >= number) {
+        num = 700
+        setTriper(number)
+        clearInterval(timer)
+      }
+      return setTriper(num)
+    }, intervalTime)
+  }
+
+  function reviewerTimer(number: number) {
+    let num: number = 0
+    let intervalTime: number = 63
+    let timer = setInterval(() => {
+      num += 6
+      if (num >= number) {
+        num = 100
+        setReviewer(number)
+        clearInterval(timer)
+      }
+      return setReviewer(num)
+    }, intervalTime)
+  }
+
+  function calendarTimer(number: number) {
+    let num: number = 0
+    let intervalTime: number = 14
+    let timer = setInterval(() => {
+      num += 6
+      if (num >= number) {
+        num = 470
+        setcCalendar(470)
+        clearInterval(timer)
+      }
+      return setcCalendar(num)
+    }, intervalTime)
+  }
 
   return (
     <SectionWrapper>
       <ContentsWrapper>
-        <ContentsLogo ref={contentsLogoAnimation}>
-          2021년 12월 기준
-        </ContentsLogo>
-        <ContentsReview ref={contentsReviewAnimation}>
+        <ContentsLogo>2021년 12월 기준</ContentsLogo>
+        <ContentsReview>
           <div>
             <strong>
-              <span>700</span>만 명
+              <span>{triper}</span>만 명
             </strong>
             의 여행자
           </div>
           <div>
             <strong>
-              <span>100</span>만 개
+              <span>{reviewer}</span>만 개
             </strong>
             의 여행 리뷰
           </div>
           <div>
             <strong>
-              <span>470</span>만 개
+              <span>{calendar}</span>만 개
             </strong>
             의 여행 일정
           </div>
         </ContentsReview>
-        <AwardItems ref={awardItemsAnimation}>
+        <AwardItems>
           <AwardItemGoogle>
             2018 구글 플레이스토어
             <br />
@@ -78,20 +112,3 @@ const Section = () => {
 }
 
 export default Section
-
-/*
-const [count, setCount] = useState<any>(0)
-console.log(count)
-
-useEffect(() => {
-    const countdown = setInterval(() => {
-      if (parseInt(count) <= 699) {
-        setCount(parseInt(count) + 1)
-      } else if (count === 699) {
-        clearInterval(countdown)
-      }
-    }, 0)
-    return () => clearInterval(countdown)
-  }, [count])
-
-*/

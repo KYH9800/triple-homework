@@ -5,8 +5,8 @@ import Test from '../components/Test'
 const HomePage = () => {
   return (
     <>
-      <Test />
       <Section />
+      <Test />
     </>
   )
 }

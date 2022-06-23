@@ -2,7 +2,7 @@
 import styled, { keyframes } from 'styled-components'
 
 // keyframes
-export const fadeInUp: {} = keyframes`
+const fadeInUp: {} = keyframes`
   0% {
       opacity:0;
       transform: translate3d(0, 8%, 0);
@@ -13,10 +13,10 @@ export const fadeInUp: {} = keyframes`
   }
 `
 
-export const fadeInUp01: {} = keyframes`
+const awardItemsFadeInUp: {} = keyframes`
   0% {
       opacity:0;
-      transform: translate3d(0, 30%, 0);
+      transform: translate3d(0, 40%, 0);
   }
   to {
       opacity: 1;
@@ -58,10 +58,10 @@ export const ContentsLogo = styled.div`
 
 export const ContentsReview = styled.div`
   // animation keyframes
-  position: relative;
   animation: ${fadeInUp};
   animation-duration: 700ms;
   animation-delay: 100ms;
+  position: relative;
   margin-left: 623px;
   padding-top: 147px;
   color: rgb(58, 58, 58);
@@ -76,10 +76,10 @@ export const ContentsReview = styled.div`
 
 export const AwardItems = styled.div`
   // animation keyframes
-  position: relative;
-  animation: ${fadeInUp01};
+  animation: ${awardItemsFadeInUp};
   animation-duration: 700ms;
   animation-delay: 200ms;
+  position: relative;
   margin: 33px 0px 140px 623px;
   display: inline-flex;
   div {
