@@ -22,12 +22,6 @@ const Section = () => {
   const [reviewer, setReviewer] = useState<number>(100)
   const [calendar, setcCalendar] = useState<number>(470)
 
-  useEffect(() => {
-    triperTimer(triper)
-    reviewerTimer(reviewer)
-    calendarTimer(calendar)
-  }, [])
-
   const setTimer = useCallback(
     (timer): void => {
       setTimeout(() => {
@@ -42,47 +36,82 @@ const Section = () => {
 
   const triperTimer = useCallback((number: number): void => {
     let num = 0
-    const intervalTime = 16
     const timer = setInterval((): void => {
       num += 6
-      if (num >= number) {
-        num = 700
+      if (num > 680) {
+        clearInterval(timer)
+        const slowTimer = setInterval((): void => {
+          num += 1
+          setTriper(num)
+          if (num > 700) {
+            num = 700
+            setTriper(num)
+            clearInterval(slowTimer)
+          }
+        }, 78)
+        setTimer(slowTimer)
+      } else if (num >= number) {
         setTriper(number)
         clearInterval(timer)
       }
       return setTriper(num)
-    }, intervalTime)
-    setTimer(timer)
+    }, 7)
   }, [])
 
   const reviewerTimer = useCallback((number: number): void => {
     let num = 0
-    const intervalTime = 110
     const timer = setInterval(() => {
       num += 6
-      if (num >= number) {
+      if (num > 89) {
+        clearInterval(timer)
+        const slowTimer = setInterval((): void => {
+          num += 1
+          setReviewer(num)
+          if (num > 100) {
+            num = 100
+            setReviewer(num)
+            clearInterval(slowTimer)
+          }
+        }, 100)
+        setTimer(slowTimer)
+      } else if (num >= number) {
         num = 100
         setReviewer(number)
         clearInterval(timer)
       }
       return setReviewer(num)
-    }, intervalTime)
-    setTimer(timer)
+    }, 60)
   }, [])
 
   const calendarTimer = useCallback((number: number): void => {
     let num = 0
-    const intervalTime = 25
     const timer = setInterval(() => {
       num += 6
-      if (num >= number) {
+      if (num > 460) {
+        clearInterval(timer)
+        const slowTimer = setInterval((): void => {
+          num += 1
+          setcCalendar(num)
+          if (num > 470) {
+            num = 470
+            setcCalendar(num)
+            clearInterval(slowTimer)
+          }
+        }, 100)
+        setTimer(slowTimer)
+      } else if (num >= number) {
         num = 470
         setcCalendar(470)
         clearInterval(timer)
       }
       return setcCalendar(num)
-    }, intervalTime)
-    setTimer(timer)
+    }, 15)
+  }, [])
+
+  useEffect(() => {
+    triperTimer(triper)
+    reviewerTimer(reviewer)
+    calendarTimer(calendar)
   }, [])
 
   return (
