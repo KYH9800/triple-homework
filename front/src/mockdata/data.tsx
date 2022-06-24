@@ -7,17 +7,17 @@ interface ArrayType {
 export const database: ArrayType = {
   triper: Array(700)
     .fill('triper')
-    .map((ele, idx) => {
+    .map((ele) => {
       return ele
     }),
   review: Array(100)
     .fill('review')
-    .map((ele, idx) => {
+    .map((ele) => {
       return ele
     }),
   calendar: Array(470)
     .fill('calendar')
-    .map((ele, idx) => {
+    .map((ele) => {
       return ele
     }),
 }

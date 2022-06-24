@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 // styled-components
 import {
@@ -28,10 +28,22 @@ const Section = () => {
     calendarTimer(calendar)
   }, [])
 
-  function triperTimer(number: number) {
-    let num: number = 0
-    let intervalTime: number = 10
-    let timer = setInterval(() => {
+  const setTimer = useCallback(
+    (timer): void => {
+      setTimeout(() => {
+        setTriper(700)
+        setReviewer(100)
+        setcCalendar(470)
+        clearInterval(timer)
+      }, 2000)
+    },
+    [setTriper, setReviewer, setcCalendar, clearInterval],
+  )
+
+  const triperTimer = useCallback((number: number): void => {
+    let num = 0
+    const intervalTime = 16
+    const timer = setInterval((): void => {
       num += 6
       if (num >= number) {
         num = 700
@@ -40,12 +52,13 @@ const Section = () => {
       }
       return setTriper(num)
     }, intervalTime)
-  }
+    setTimer(timer)
+  }, [])
 
-  function reviewerTimer(number: number) {
-    let num: number = 0
-    let intervalTime: number = 63
-    let timer = setInterval(() => {
+  const reviewerTimer = useCallback((number: number): void => {
+    let num = 0
+    const intervalTime = 110
+    const timer = setInterval(() => {
       num += 6
       if (num >= number) {
         num = 100
@@ -54,12 +67,13 @@ const Section = () => {
       }
       return setReviewer(num)
     }, intervalTime)
-  }
+    setTimer(timer)
+  }, [])
 
-  function calendarTimer(number: number) {
-    let num: number = 0
-    let intervalTime: number = 14
-    let timer = setInterval(() => {
+  const calendarTimer = useCallback((number: number): void => {
+    let num = 0
+    const intervalTime = 25
+    const timer = setInterval(() => {
       num += 6
       if (num >= number) {
         num = 470
@@ -68,7 +82,8 @@ const Section = () => {
       }
       return setcCalendar(num)
     }, intervalTime)
-  }
+    setTimer(timer)
+  }, [])
 
   return (
     <SectionWrapper>

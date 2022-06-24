@@ -2,7 +2,7 @@
 import styled, { keyframes } from 'styled-components'
 
 // keyframes
-const fadeInUp: {} = keyframes`
+const fadeInUp = keyframes`
   0% {
       opacity:0;
       transform: translate3d(0, 8%, 0);
@@ -13,7 +13,7 @@ const fadeInUp: {} = keyframes`
   }
 `
 
-const awardItemsFadeInUp: {} = keyframes`
+const awardItemsFadeInUp = keyframes`
   0% {
       opacity:0;
       transform: translate3d(0, 40%, 0);
