@@ -2,7 +2,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
-export default withBundleAnalyzer({
+module.exports = withBundleAnalyzer({
   // target: 'serverless',
   webpack(conf) {
     conf.module.rules.push({
