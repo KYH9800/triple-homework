@@ -24,12 +24,12 @@ const Section = () => {
       setReviewer(100)
       setCalendar(470)
     }, 2000)
-  }, [triper, reviewer, calendar])
+  }, [])
 
   useEffect(() => {
     const timer = setInterval(() => {
-      if (triper > 680) {
-        setTriperIntervalTime((time) => time + 6)
+      if (triper > 685) {
+        setTriperIntervalTime((time) => time + 10)
       }
       setTriper((num) => num + 1)
     }, triperIntervalTime)
