@@ -22,7 +22,10 @@ npm run dev
 ```
 ----
 # Stacks
-todo...
+1. React: 요구 사항 반영
+2. styled-components
+- todo
+- toto02
 
 ----
 
