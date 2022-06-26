@@ -59,7 +59,7 @@ const Section = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       if (calendar > 455) {
-        setCalendarIntervalTime((time) => time + 13)
+        setCalendarIntervalTime((time) => time + 15)
       }
       setCalendar((num) => num + 1)
     }, calendarIntervalTime)
