@@ -1,5 +1,4 @@
 # triple
------
 
 ## Installation
 ```
