@@ -1,6 +1,5 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
-// styled-components
 import {
   SectionWrapper,
   ContentsWrapper,
@@ -10,13 +9,6 @@ import {
   AwardItemGoogle,
   AwardItemApple,
 } from '../styles/SectionSt'
-
-// 숫자 올라가는 애니매이션
-// react와 DOM API로만 구현
-// 0부터 시작, 2초 동안 증가, 동시 끝
-// 증가 속도 느려지는 효과까지 (setInterval, clearInterval)
-// 참고: https://www.youtube.com/watch?v=pwV40r8IGWQ
-// 참고: https://velog.io/@effort_jk/setInterval-clearInterval-%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%95%A8%EC%88%98-%EB%B0%98%EB%B3%B5-%EC%A4%91%EB%8B%A8-%EC%9E%AC%EC%8B%9C%EC%9E%91
 
 const Section = () => {
   const [triper, setTriper] = useState<number>(0) // 700
