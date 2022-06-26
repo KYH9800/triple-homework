@@ -22,12 +22,12 @@ npm run dev
 ```
 ----
 # Stacks
-1. next.js
+### next.js
 - todo..
 - todo...
 
 
-2. styled-components
+### styled-components
 - todo
 - toto02
 
