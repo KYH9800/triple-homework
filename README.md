@@ -6,7 +6,7 @@
 git clone https://github.com/KYH9800/triple-homework.git
 ```
 ```
-cd 
+cd front/
 ```
 
 ## Installation
