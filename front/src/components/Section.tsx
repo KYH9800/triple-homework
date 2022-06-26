@@ -23,12 +23,11 @@ const Section = () => {
       setTriper(700)
       setReviewer(100)
       setCalendar(470)
-      console.log('2초')
     }, 2000)
   }, [])
 
   useEffect(() => {
-    let timer = setInterval(() => {
+    const timer = setInterval(() => {
       if (triper > 680) {
         setTriperIntervalTime((time) => time + 6)
       }
@@ -38,10 +37,10 @@ const Section = () => {
       return clearInterval(timer)
     }
     return () => clearInterval(timer)
-  }, [triper])
+  }, [triper, triperIntervalTime])
 
   useEffect(() => {
-    let timer = setInterval(() => {
+    const timer = setInterval(() => {
       if (reviewer > 80) {
         setReviewerIntervalTime((time) => time + 10)
       }
@@ -51,10 +50,10 @@ const Section = () => {
       return clearInterval(timer)
     }
     return () => clearInterval(timer)
-  }, [reviewer])
+  }, [reviewer, reviewerIntervalTime])
 
   useEffect(() => {
-    let timer = setInterval(() => {
+    const timer = setInterval(() => {
       if (calendar > 455) {
         setCalendarIntervalTime((time) => time + 15)
       }
@@ -64,7 +63,7 @@ const Section = () => {
       return clearInterval(timer)
     }
     return () => clearInterval(timer)
-  }, [calendar])
+  }, [calendar, calendarIntervalTime])
 
   return (
     <SectionWrapper>

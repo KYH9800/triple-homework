@@ -1,11 +1,7 @@
 import Section from '../components/Section'
 
 const HomePage = () => {
-  return (
-    <>
-      <Section />
-    </>
-  )
+  return <Section />
 }
 
 export default HomePage

@@ -54,8 +54,3 @@ class MyDocument extends Document {
 }
 
 export default MyDocument
-
-// eslint error getInitialProps 문제 참고(하단)
-// https://stackoverflow.com/questions/67087999/how-to-properly-type-the-document-tsx-file-from-next-js
-// https://blog.sycamore.design/material-ui-next-js-typescript#heading-create-custom-documenttsx
-// https://nextjs.org/docs/advanced-features/custom-document#typescript
