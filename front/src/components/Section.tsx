@@ -56,7 +56,7 @@ const Section = () => {
   useEffect(() => {
     let timer = setInterval(() => {
       if (calendar > 455) {
-        setCalendarIntervalTime((time) => time + 7)
+        setCalendarIntervalTime((time) => time + 15)
       }
       setCalendar((num) => num + 1)
     }, calendarIntervalTime)
@@ -64,7 +64,7 @@ const Section = () => {
       return clearInterval(timer)
     }
     return () => clearInterval(timer)
-  })
+  }, [calendar])
 
   return (
     <SectionWrapper>
