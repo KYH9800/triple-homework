@@ -19,57 +19,60 @@ import {
 // 참고: https://velog.io/@effort_jk/setInterval-clearInterval-%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%95%A8%EC%88%98-%EB%B0%98%EB%B3%B5-%EC%A4%91%EB%8B%A8-%EC%9E%AC%EC%8B%9C%EC%9E%91
 
 const Section = () => {
-  const [triper, setTriper] = useState<number>(700)
-  const [reviewer, setReviewer] = useState<number>(100)
-  const [calendar, setcCalendar] = useState<number>(470)
-
-  // 1. first interval function
-
-  // 2. second interval function
-
-  const countTimer = useCallback(
-    (
-      value: number, // state
-      setValue: any, // setState
-      intervalTime: number, // first interval time
-      slowIntervalTime: number, // slow interval time
-      limit: number, // limit number
-    ): void => {
-      let num = 0
-      const timer = setInterval(() => {
-        num += 6
-        if (num > limit) {
-          clearInterval(timer)
-          const slowTimer = setInterval((): void => {
-            num += 1
-            setValue(num)
-            if (num > value) {
-              num = value
-              setValue(num)
-              clearInterval(slowTimer)
-            }
-          }, slowIntervalTime)
-        } else if (num >= value) {
-          num = 100
-          setValue(value)
-          clearInterval(timer)
-        }
-        return setValue(num)
-      }, intervalTime)
-      setTimeout(() => {
-        clearInterval(timer)
-        setValue(value)
-        console.log('2초') // lint error: don't using this
-      }, 2000)
-    },
-    [],
-  )
+  const [triper, setTriper] = useState<number>(0) // 700
+  const [reviewer, setReviewer] = useState<number>(0) // 100
+  const [calendar, setCalendar] = useState<number>(0) // 470
+  const [triperIntervalTime, setTriperIntervalTime] = useState<number>(1)
+  const [reviewerIntervalTime, setReviewerIntervalTime] = useState<number>(1)
+  const [calendarIntervalTime, setCalendarIntervalTime] = useState<number>(1)
 
   useEffect(() => {
-    countTimer(triper, setTriper, 7, 70, 680)
-    countTimer(reviewer, setReviewer, 60, 100, 89)
-    countTimer(calendar, setcCalendar, 15, 100, 460)
+    setTimeout(() => {
+      setTriper(700)
+      setReviewer(100)
+      setCalendar(470)
+      console.log('2초')
+    }, 2000)
   }, [])
+
+  useEffect(() => {
+    let timer = setInterval(() => {
+      if (triper > 680) {
+        setTriperIntervalTime((time) => time + 6)
+      }
+      setTriper((num) => num + 1)
+    }, triperIntervalTime)
+    if (triper === 700) {
+      return clearInterval(timer)
+    }
+    return () => clearInterval(timer)
+  }, [triper])
+
+  useEffect(() => {
+    let timer = setInterval(() => {
+      if (reviewer > 80) {
+        setReviewerIntervalTime((time) => time + 10)
+      }
+      setReviewer((num) => num + 1)
+    }, reviewerIntervalTime)
+    if (reviewer === 100) {
+      return clearInterval(timer)
+    }
+    return () => clearInterval(timer)
+  }, [reviewer])
+
+  useEffect(() => {
+    let timer = setInterval(() => {
+      if (calendar > 455) {
+        setCalendarIntervalTime((time) => time + 7)
+      }
+      setCalendar((num) => num + 1)
+    }, calendarIntervalTime)
+    if (calendar === 470) {
+      return clearInterval(timer)
+    }
+    return () => clearInterval(timer)
+  })
 
   return (
     <SectionWrapper>
