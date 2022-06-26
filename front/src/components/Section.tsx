@@ -16,102 +16,59 @@ import {
 // 0부터 시작, 2초 동안 증가, 동시 끝
 // 증가 속도 느려지는 효과까지 (setInterval, clearInterval)
 // 참고: https://www.youtube.com/watch?v=pwV40r8IGWQ
+// 참고: https://velog.io/@effort_jk/setInterval-clearInterval-%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%95%A8%EC%88%98-%EB%B0%98%EB%B3%B5-%EC%A4%91%EB%8B%A8-%EC%9E%AC%EC%8B%9C%EC%9E%91
 
 const Section = () => {
   const [triper, setTriper] = useState<number>(700)
   const [reviewer, setReviewer] = useState<number>(100)
   const [calendar, setcCalendar] = useState<number>(470)
 
-  const setTimer = useCallback(
-    (timer): void => {
+  // 1. first interval function
+
+  // 2. second interval function
+
+  const countTimer = useCallback(
+    (
+      value: number, // state
+      setValue: any, // setState
+      intervalTime: number, // first interval time
+      slowIntervalTime: number, // slow interval time
+      limit: number, // limit number
+    ): void => {
+      let num = 0
+      const timer = setInterval(() => {
+        num += 6
+        if (num > limit) {
+          clearInterval(timer)
+          const slowTimer = setInterval((): void => {
+            num += 1
+            setValue(num)
+            if (num > value) {
+              num = value
+              setValue(num)
+              clearInterval(slowTimer)
+            }
+          }, slowIntervalTime)
+        } else if (num >= value) {
+          num = 100
+          setValue(value)
+          clearInterval(timer)
+        }
+        return setValue(num)
+      }, intervalTime)
       setTimeout(() => {
-        setTriper(700)
-        setReviewer(100)
-        setcCalendar(470)
         clearInterval(timer)
+        setValue(value)
+        console.log('2초') // lint error: don't using this
       }, 2000)
     },
-    [setTriper, setReviewer, setcCalendar, clearInterval],
+    [],
   )
 
-  const triperTimer = useCallback((number: number): void => {
-    let num = 0
-    const timer = setInterval((): void => {
-      num += 6
-      if (num > 680) {
-        clearInterval(timer)
-        const slowTimer = setInterval((): void => {
-          num += 1
-          setTriper(num)
-          if (num > 700) {
-            num = 700
-            setTriper(num)
-            clearInterval(slowTimer)
-          }
-        }, 78)
-        setTimer(slowTimer)
-      } else if (num >= number) {
-        setTriper(number)
-        clearInterval(timer)
-      }
-      return setTriper(num)
-    }, 7)
-  }, [])
-
-  const reviewerTimer = useCallback((number: number): void => {
-    let num = 0
-    const timer = setInterval(() => {
-      num += 6
-      if (num > 89) {
-        clearInterval(timer)
-        const slowTimer = setInterval((): void => {
-          num += 1
-          setReviewer(num)
-          if (num > 100) {
-            num = 100
-            setReviewer(num)
-            clearInterval(slowTimer)
-          }
-        }, 100)
-        setTimer(slowTimer)
-      } else if (num >= number) {
-        num = 100
-        setReviewer(number)
-        clearInterval(timer)
-      }
-      return setReviewer(num)
-    }, 60)
-  }, [])
-
-  const calendarTimer = useCallback((number: number): void => {
-    let num = 0
-    const timer = setInterval(() => {
-      num += 6
-      if (num > 460) {
-        clearInterval(timer)
-        const slowTimer = setInterval((): void => {
-          num += 1
-          setcCalendar(num)
-          if (num > 470) {
-            num = 470
-            setcCalendar(num)
-            clearInterval(slowTimer)
-          }
-        }, 100)
-        setTimer(slowTimer)
-      } else if (num >= number) {
-        num = 470
-        setcCalendar(470)
-        clearInterval(timer)
-      }
-      return setcCalendar(num)
-    }, 15)
-  }, [])
-
   useEffect(() => {
-    triperTimer(triper)
-    reviewerTimer(reviewer)
-    calendarTimer(calendar)
+    countTimer(triper, setTriper, 7, 70, 680)
+    countTimer(reviewer, setReviewer, 60, 100, 89)
+    countTimer(calendar, setcCalendar, 15, 100, 460)
   }, [])
 
   return (
