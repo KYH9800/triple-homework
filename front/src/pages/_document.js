@@ -1,17 +1,8 @@
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentInitialProps,
-  DocumentContext,
-} from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 class MyDocument extends Document {
-  static async getInitialProps(
-    ctx: DocumentContext,
-  ): Promise<DocumentInitialProps> {
+  static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
     const initialProps = await Document.getInitialProps(ctx)
@@ -37,7 +28,7 @@ class MyDocument extends Document {
     }
   }
 
-  public render() {
+  render() {
     return (
       <Html>
         <Head>
