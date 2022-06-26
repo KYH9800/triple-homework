@@ -1,7 +1,6 @@
 {
   "name": "triple",
   "version": "1.0.0",
-  "prettier": "@titicaca/eslint-config-triple/prettierrc",
   "description": "",
   "main": "index.js",
   "scripts": {
