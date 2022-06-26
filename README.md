@@ -1,4 +1,10 @@
 # triple
+프로젝트 실행을 위해 아래의 터미널에서 아래의 명령어를 순서대로 실행해 주세요.
+
+## git clone
+```
+git clone 
+```
 
 ## Installation
 ```
@@ -9,7 +15,7 @@ npm install
 ```
 npm run dev
 ```
------
+----
 
 ### 요구사항
 
