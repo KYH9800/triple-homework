@@ -24,7 +24,7 @@ const Section = () => {
       setReviewer(100)
       setCalendar(470)
     }, 2000)
-  }, [])
+  }, [triper, reviewer, calendar])
 
   useEffect(() => {
     const timer = setInterval(() => {

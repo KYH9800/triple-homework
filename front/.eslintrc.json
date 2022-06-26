@@ -5,10 +5,18 @@
   },
   "overrides": [
     {
-      "files": ["*.test.js"],
+      "files": ["*.test.js", ".ts", ".tsx", ".js"],
       "env": {
         "jest": true
       }
     }
-  ]
+  ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx", ".js"]
+    },
+    "import/resolver": {
+      "typescript": "./tsconfig.json"
+    }
+  }
 }

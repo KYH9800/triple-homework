@@ -15,6 +15,19 @@
     "jsx": "preserve",
     "resolveJsonModule": true
   },
+  "rules": {
+    // disable the rule for all files
+    "@typescript-eslint/explicit-member-accessibility": "off"
+  },
+  "overrides": [
+    {
+      // enable the rule specifically for TypeScript files
+      "files": ["*.ts", "*.mts", "*.cts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-member-accessibility": ["error"]
+      }
+    }
+  ],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
