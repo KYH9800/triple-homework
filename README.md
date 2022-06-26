@@ -1,10 +1,12 @@
 # triple
+-----
 
 ## Installation
 ```
 npm install
 ```
-## start project
+
+## Start Project
 ```
 npm run dev
 ```
