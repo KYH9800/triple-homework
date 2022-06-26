@@ -35,6 +35,8 @@ const Section = () => {
     }, triperIntervalTime)
     if (triper === 700) {
       return clearInterval(timer)
+    } else if (triper >= 700) {
+      return setTriper(700)
     }
     return () => clearInterval(timer)
   }, [triper, triperIntervalTime])
@@ -48,6 +50,8 @@ const Section = () => {
     }, reviewerIntervalTime)
     if (reviewer === 100) {
       return clearInterval(timer)
+    } else if (reviewer >= 100) {
+      return setReviewer(100)
     }
     return () => clearInterval(timer)
   }, [reviewer, reviewerIntervalTime])
@@ -55,12 +59,14 @@ const Section = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       if (calendar > 455) {
-        setCalendarIntervalTime((time) => time + 15)
+        setCalendarIntervalTime((time) => time + 13)
       }
       setCalendar((num) => num + 1)
     }, calendarIntervalTime)
     if (calendar === 470) {
       return clearInterval(timer)
+    } else if (calendar >= 470) {
+      return setCalendar(470)
     }
     return () => clearInterval(timer)
   }, [calendar, calendarIntervalTime])
