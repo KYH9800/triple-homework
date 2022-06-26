@@ -8,10 +8,7 @@ npm install
 ```
 npm run dev
 ```
-
-트리플 홈페이지의 한 섹션을 구현합니다.
-
-![image](https://user-images.githubusercontent.com/61128538/174728224-876f15b2-9dc6-405f-9fb6-9192d92f56c1.png)
+---
 
 ### 요구사항
 
