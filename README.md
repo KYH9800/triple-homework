@@ -1,4 +1,4 @@
-## triple
+# triple
 
 ## Installation
 ```
@@ -8,7 +8,7 @@ npm install
 ```
 npm run dev
 ```
----
+-----
 
 ### 요구사항
 
