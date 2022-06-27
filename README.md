@@ -34,5 +34,7 @@ npm run dev
 판단되어 사용했습니다.
 
 ## styled-components
-- todo
-- toto02
+
+styled-components의 장점이 몇가지 있지만 해당 프로젝트에서는
+
+component 단위 스타일링을 위해 styled-components를 적용했습니다.
