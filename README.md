@@ -26,9 +26,9 @@ npm run dev
 
 
 ## next.js
-해당 프로젝트에서는 SSR을 따로 구현하지는 않았지만, Next.js를 사용하는 이유는 Server Side Rendering 입니다.
+해당 프로젝트에서는 SSR을 따로 구현하지는 않았지만, Next.js를 사용하는 이유는 Server Side Rendering과
 
-(SSR은 SEO(검색 엔진 최적화)의 중요한 역할을 함)
+이를 통한 SEO(검색 엔진 최적화)에 있습니다.
 
 하지만 Client Side Rendering 방식으로 사용하면서 SPA의 장점도 유지가 가능하기 때문에 사용해도 무관하다
 
