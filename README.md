@@ -24,6 +24,7 @@ npm run dev
 # Stacks
 > 사용한 기술과 선택한 이유
 
+
 ## next.js
 해당 프로젝트에서는 SSR을 따로 구현하지는 않았지만, Next.js를 사용하는 이유는 Server Side Rendering 입니다.
 
@@ -31,6 +32,7 @@ npm run dev
 
 하지만 Client Side Rendering 방식으로 사용하면서 SPA의 장점도 유지가 가능하기 때문에 사용했습니다.
 
-### styled-components
+
+## styled-components
 - todo
 - toto02
