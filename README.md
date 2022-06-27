@@ -54,9 +54,10 @@ styled-components의 장점으로는 몇가지가 있습니다.
 
 ---
 ## React Hooks
-프로젝트에서 state 값과 react의 여러 기능을 사용할 수 있으며 무엇보다 함수형으로 컴포넌트를 관리하고자 사용했습니다.
+프로젝트에서 state 값과 react의 여러 기능을 사용할 수 있으며 **무엇보다 함수형으로 컴포넌트를 관리하고자 사용했습니다.**
 
 ## useEffect
+
 React의 라이프 사이클 중에서 componentDidMount, componentWillUnmount를 구현하기 위해
 
 Effect Hook 사용하여 함수 컴포넌트에서 side effect를 수행하기 위한 목적으로 사용했습니다.
