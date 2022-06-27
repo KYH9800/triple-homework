@@ -52,4 +52,25 @@ styled-components의 장점으로는 몇가지가 있습니다.
 2. setTimeout()
 - 2초 동안 count가 증가하고 종료할 때 동시에 종료되는 시각적인 효과를 위해 사용했습니다.
 
+---
+## React Hooks
+프로젝트에서 state 값과 react의 여러 기능을 사용할 수 있으며 무엇보다 함수형으로 컴포넌트를 관리하고자 사용했습니다.
 
+## useEffect
+React의 라이프 사이클 중에서 componentDidMount, componentWillUnmount를 구현하기 위해
+
+Effect Hook 사용하여 함수 컴포넌트에서 side effect를 수행하기 위한 목적으로 사용했습니다.
+
+componentDidMount: 이 메서드는 컴포넌트를 만들고 첫 렌더링을 마친 후 실행됩니다.
+componentWillUnmount: 이 메서드는 컴포넌트를 DOM에서 제거할 때 실행합니다.
+
+```
+const App = () => {
+    useEffect(() => {
+        // componentDidMount
+        return () => {
+          // componentWillUnmount
+        }
+    }, []);
+}
+```
