@@ -35,6 +35,10 @@ npm run dev
 
 ## styled-components
 
-styled-components의 장점이 몇가지 있지만 해당 프로젝트에서는
+styled-components의 장점으로는 몇가지가 있습니다.
+1. component 단위 스타일링
+2. 조건부 스타일링
+3. 확장 스타일링
+4. 중첩 스코프
 
-component 단위 스타일링을 위해 styled-components를 적용했습니다.
+해당 프로젝트에서는 component 단위 스타일링을 위해 styled-components를 적용했습니다.
