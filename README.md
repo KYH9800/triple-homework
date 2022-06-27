@@ -63,6 +63,7 @@ React의 라이프 사이클 중에서 `componentDidMount`, `componentWillUnmoun
 Effect Hook 사용하여 함수 컴포넌트에서 side effect를 수행하기 위한 목적으로 사용했습니다.
 
 `componentDidMount`: 이 메서드는 컴포넌트를 만들고 첫 렌더링을 마친 후 실행됩니다.
+
 `componentWillUnmount`: 이 메서드는 컴포넌트를 DOM에서 제거할 때 실행합니다.
 
 ```js
