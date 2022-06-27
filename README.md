@@ -30,7 +30,9 @@ npm run dev
 
 (SSR은 SEO(검색 엔진 최적화)의 중요한 역할을 함)
 
-하지만 Client Side Rendering 방식으로 사용하면서 SPA의 장점도 유지가 가능하기 때문에 사용해도 무관하다 판단되어 사용했습니다.
+하지만 Client Side Rendering 방식으로 사용하면서 SPA의 장점도 유지가 가능하기 때문에 사용해도 무관하다
+
+판단되어 사용했습니다.
 
 
 ## styled-components
