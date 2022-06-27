@@ -45,7 +45,11 @@ styled-components의 장점으로는 몇가지가 있습니다.
 
 ## Web APIs
 1. setInterval(), clearInterval()
+- 숫자가 증가하는 효과를 주기 위해 사용했습니다.
 - 설정한 초(ms) 마다 count를 증가시키는 코드를 실행 시킵니다.
-- clearInterval()를 통해 count 종료함으로 counter를 구현하기 위한 목적으로 사용했습니다.
+- clearInterval()를 통해 count 종료합니다.
 
 2. setTimeout()
+- 2초 동안 count가 증가하고 종료할 때 동시에 종료되는 시각적인 효과를 위해 사용했습니다.
+
+
