@@ -36,9 +36,16 @@ npm run dev
 ## styled-components
 
 styled-components의 장점으로는 몇가지가 있습니다.
-1. component 단위 스타일링
-2. 조건부 스타일링
-3. 확장 스타일링
-4. 중첩 스코프
+- component 단위 스타일링
+- 조건부 스타일링
+- 확장 스타일링
+- 중첩 스코프
 
-해당 프로젝트에서는 component 단위 스타일링을 위해 styled-components를 적용했습니다.
+해당 프로젝트에서는 component 단위 스타일링과 중첩 스코프 규칙을 사용하기 위해 styled-components를 적용했습니다.
+
+## Web APIs
+1. setInterval(), clearInterval()
+- 설정한 초(ms) 마다 count를 증가시키는 코드를 실행 시킵니다.
+- clearInterval()를 통해 count 종료함으로 counter를 구현하기 위한 목적으로 사용했습니다.
+
+2. setTimeout()
