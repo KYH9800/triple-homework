@@ -22,6 +22,7 @@ npm run dev
 ```
 ----
 # Stacks
+> 사용한 기술과 이유를 설명합니다.
 
 ## next.js
 해당 프로젝트에서는 SSR을 따로 구현하지는 않았지만, Next.js를 사용하는 이유는 Server Side Rendering과
