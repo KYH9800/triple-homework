@@ -3,9 +3,9 @@
 
 https://triple-homework-i2n6jvafj-ko7452.vercel.app/
 
-> 프로젝트 실행을 위해 터미널에서 아래의 명령어를 순서대로 실행해 주세요.
 
 ## git clone
+> 프로젝트 실행을 위해 터미널에서 아래의 명령어를 순서대로 실행해 주세요.
 ```
 git clone https://github.com/KYH9800/triple-homework.git
 ```
