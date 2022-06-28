@@ -13,8 +13,7 @@
     "lint:style": "stylelint './**/*.{js,ts,tsx}'",
     "lint:style:fix": "stylelint './**/*.{js,ts,tsx}' --fix",
     "lint:etc": "prettier '**/*.{json,yaml,md}' --check",
-    "lint:etc:fix": "prettier '**/*.{json,yaml,md}' --write",
-    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
+    "lint:etc:fix": "prettier '**/*.{json,yaml,md}' --write"
   },
   "author": "KYH",
   "license": "ISC",
