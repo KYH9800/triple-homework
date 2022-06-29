@@ -85,7 +85,7 @@ const App = () => {
 > 구현 후 요구사항에 더욱 부합하기 위해 refactoring
 
 ### React Hooks: useRef (in progress...)
-특정 DOM을 선택하여 조금 더 javascript 답게 사용하고자 합나디.
+> 특정 DOM을 선택하여 조금 더 javascript 답게 사용하고자 합나디.
 
 ```js
 let num = 0 // useState로 바꾸기
@@ -123,7 +123,7 @@ let num = 0 // useState로 바꾸기
 ```
 
 ### window.requestAnimationFrame()
-CSS 성능 향상을 위해 적용합니다.
+> CSS 성능 향상을 위해 적용합니다.
 
 콜백의 수는 보통 1초에 60회지만, 일반적으로 대부분의 브라우저에서는 W3C 권장사항에 따라 그 수가 디스플레이 주사율과 일치하게됩니다.
 
