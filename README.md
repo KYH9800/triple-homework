@@ -84,8 +84,43 @@ const App = () => {
 # refactoring
 > 구현 후 요구사항에 더욱 부합하기 위해 refactoring
 
-## React Hooks: useRef
+## React Hooks: useRef (진행중...)
 특정 DOM을 선택하여 조금 더 javascript 답게 사용하고자 합나디.
+
+```js
+let num = 0 // useState로 바꾸기
+  let intervalTime = 1 // useState로 바꾸기
+  const numberTarget = useRef([])
+
+  useEffect(() => {
+    let setTimer = setTimeout(() => {
+      console.log('2초')
+    }, 2000)
+    return () => clearTimeout(setTimer)
+  }, [])
+
+  useEffect(() => {
+    console.log('ComponentDidUpdate')
+    for (let i = 0; i < numberTarget.current.length; i++) {
+      counter(i)
+    }
+  }) // 라이프사이클 이해 -> 적용
+
+  function counter(idx: number) {
+    const timer = setInterval(() => {
+      const limitNumber = parseInt(numberTarget.current[idx].ariaValueMax)
+      intervalTime += 100
+      console.log(intervalTime)
+      num += 1
+      numberTarget.current[idx].innerText = num
+      if (num > limitNumber) {
+        clearInterval(timer)
+        numberTarget.current[idx].innerText = limitNumber
+      }
+    }, intervalTime)
+    return () => clearInterval(timer)
+  }
+```
 
 ## window.requestAnimationFrame()
 CSS 성능 향상을 위해 적용합니다.
