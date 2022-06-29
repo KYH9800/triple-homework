@@ -80,3 +80,22 @@ const App = () => {
     }, []);
 }
 ```
+
+# refactoring
+> 구현 후 요구사항에 더욱 부합하기 위해 refactoring
+
+## React Hooks: useRef
+특정 DOM을 선택하여 조금 더 javascript 답게 사용하고자 합나디.
+
+## window.requestAnimationFrame()
+CSS 성능 향상을 위해 적용합니다.
+
+콜백의 수는 보통 1초에 60회지만, 일반적으로 대부분의 브라우저에서는 W3C 권장사항에 따라 그 수가 디스플레이 주사율과 일치하게됩니다.
+
+대부분의 최신 브라우저에서는 성능과 배터리 수명 향상을 위해 `requestAnimationFrame()` 호출은 백그라운드 탭이나
+
+hidden <iframe>에서 실행이 중단됩니다. (출처: MDN)
+
+## optimization
+1. 모든 함수를 나눠서 작성합니다.
+2. useEffect 안에 비동기 코드를 적용했으면 `componentWillUnmount`를 useEffect로 구현합니다.
